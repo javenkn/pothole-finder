@@ -1,23 +1,24 @@
 console.log('open: ');
 
-const ws = new WebSocket("ws://localhost:3000/");
+const ws = new WebSocket("ws://localhost:3001/");
+
 ws.onopen = function (event) {
   console.log('Connection is open ...');
- // ws.send("Hello Server");
+  ws.send("Hello Server");
 };
 
 ws.onerror = function (err) {
   console.log('err: ', err);
 };
 
-ws.onmessage = function (event) {
-  console.log("Yes");
+ws.onmessage = function (event) { 
   navigator.geolocation.getCurrentPosition(showPosition);
 };
 
+
 function showPosition(position) {
   var coords = position.coords;
- // console.log(ws);
+  console.log(ws);
   console.log(coords.latitude);
   console.log(coords.longitude);
   ws.send(JSON.stringify({
@@ -35,7 +36,6 @@ function myMap(lat, long){
    }
 var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
-
 
 ws.onclose = function() {
   console.log("Connection is closed ...");
