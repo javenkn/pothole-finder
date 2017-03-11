@@ -19,11 +19,11 @@ export default class potholeMap extends Component {
         longitudeDelta: 0.0421,
       },
       markers:[
-        {latlng: {latitude: 37.786019, longitude: -122.406023},
+        {latlng: {latitude: 21.3069, longitude: -157.8583},
           title: "first marker" , description: "I know it is on the wrong citymap"},
-        {latlng: {latitude: 37.785019, longitude: -122.405023},
+        {latlng: {latitude: 21.3169, longitude: -157.8683},
           title: "Saxophone Club" , description: "A music pub for saxophone lover"},
-        {latlng: {latitude: 37.784019, longitude: -122.407023},
+        {latlng: {latitude: 21.3269, longitude: -157.8783},
           title: "Coco Depertment Store" , description: "Fashion Department Store"},
       ]
     };
