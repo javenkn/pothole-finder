@@ -17,7 +17,15 @@ export default class potholeMap extends Component {
         longitude: -157.8583,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
-      }
+      },
+      markers:[
+        {latlng: {latitude: 37.786019, longitude: -122.406023},
+          title: "first marker" , description: "I know it is on the wrong citymap"},
+        {latlng: {latitude: 37.785019, longitude: -122.405023},
+          title: "Saxophone Club" , description: "A music pub for saxophone lover"},
+        {latlng: {latitude: 37.784019, longitude: -122.407023},
+          title: "Coco Depertment Store" , description: "Fashion Department Store"},
+      ]
     };
     this.onRegionChange = this.onRegionChange.bind(this);
   }
@@ -38,11 +46,14 @@ export default class potholeMap extends Component {
           region={this.state.region}
           onRegionChange={this.onRegionChange}
         >
-        <MapView.Marker
-          coordinate={{latitude: 37.786019, longitude: -122.406023}}
-          title="first marker"
-          description="I know it is on the wrong citymap"
-        />
+        {this.state.markers.map((marker,i) => (
+          <MapView.Marker
+            key={i}
+            coordinate={marker.latlng}
+            title={marker.title}
+            description={marker.description}
+          />
+        ))}
         </MapView>
         <View style={styles.container}>
           <Text>
