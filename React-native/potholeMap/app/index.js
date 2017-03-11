@@ -31,6 +31,10 @@ export default class potholeMap extends Component {
       <View style={styles.container}>
         <MapView
           style={styles.map}
+          showsUserLocation={true}
+          followsUserLocation={true}
+          showsCompass={false}
+          showsPointOfInterest={false}
           region={this.state.region}
           onRegionChange={this.onRegionChange}
         >
