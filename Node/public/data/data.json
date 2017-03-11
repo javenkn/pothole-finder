@@ -13174,6 +13174,105 @@
         "icon": "/img/ph-marker-black.png",
         "timestamp": 1488708000
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.79935598373413, 21.28691515078024]
+      },
+      "properties": {
+        "icon": "/img/ph-marker-black.png",
+        "timestamp": 1488708000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.8090763092041, 21.28789483903346]
+      },
+      "properties": {
+        "icon": "/img/ph-marker-black.png",
+        "timestamp": 1488708000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.81328201293945, 21.286215369460532]
+      },
+      "properties": {
+        "icon": "/img/ph-marker-black.png",
+        "timestamp": 1488708000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.85778522491455, 21.295012378109018]
+      },
+      "properties": {
+        "icon": "/img/ph-marker-black.png",
+        "timestamp": 1488708000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.8498888015747, 21.29637186884782]
+      },
+      "properties": {
+        "icon": "/img/ph-marker-black.png",
+        "timestamp": 1488708000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.85486698150635, 21.29341296114228]
+      },
+      "properties": {
+        "icon": "/img/ph-marker-black.png",
+        "timestamp": 1488708000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.84699201583862, 21.295092348500546]
+      },
+      "properties": {
+        "icon": "/img/ph-marker-black.png",
+        "timestamp": 1488708000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.85091876983643, 21.291873505876648]
+      },
+      "properties": {
+        "icon": "/img/ph-marker-black.png",
+        "timestamp": 1488708000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.85181999206543, 21.302649354160145]
+      },
+      "properties": {
+        "icon": "/img/ph-marker-black.png",
+        "timestamp": 1488708000
+      }
     }
   ]
 }
