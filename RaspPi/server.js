@@ -3,7 +3,7 @@ const app = express();
 const wpi = require('wiring-pi');
 const expressWs = require('express-ws')(app);
 const mercury = require('./mercury_switch.js');
-
+let coordinates = [];
 const MPin = 0;
 wpi.wiringPiSetup();
 
@@ -14,8 +14,11 @@ app.use(express.static('./public'));
 app.ws('/', function(ws, req) {
   // Event Listener waiting for a message to come in over the socket connection
   ws.on('message', (coords) => {
-    console.log(coords);
-    console.log(`received: ${coords}`);
+    JSON.parse(coords);
+    coordinates.push(coords);
+    
+    console.log(coordinates);
+    console.log(`received: ${coordinates}`);
     mercury(ws);
   });
 
