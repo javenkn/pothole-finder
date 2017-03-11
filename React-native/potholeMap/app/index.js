@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import MapView from 'react-native-maps';
 
 import Geolocation from './Geolocation.js';
+import LocationButton from './LocationButton.js'
 
 let {height, width} = Dimensions.get('window');
 
@@ -23,14 +24,12 @@ export default class potholeMap extends Component {
         longitudeDelta: 0.1952,
       },
       markers:[
-        {latlng: {
-          latitude: 21.2891667,
-          longitude: -157.8097222
-          }
-        }
+        {latlng: {latitude: 21.3069, longitude: -157.8583},
+          title: "first marker" , description: "FIRST"}
       ]
     };
     this.onRegionChange = this.onRegionChange.bind(this);
+    this.moveMaptoLocation = this.moveMaptoLocation.bind(this);
   }
 
 componentWillMount(){
@@ -53,6 +52,19 @@ componentWillMount(){
 
   onRegionChange(region) {
     this.setState({ region });
+  }
+
+  moveMaptoLocation(newPotHole) {
+    newPotHole.latitude = newPotHole.latitude+0.002;
+    newPotHole.longitude = newPotHole.longitude+0.002;
+    let newMarker = {
+      latlng: {latitude: newPotHole.latitude, longitude: newPotHole.longitude},
+      title: "Oops",
+      description: "Hit a new pothole",
+    };
+    this.state.markers.push(newMarker);
+    let pushedMarker = this.state.markers;
+    this.setState(pushedMarker);
   }
 
   render() {
@@ -79,13 +91,16 @@ componentWillMount(){
         </MapView>
         <View style={styles.container}>
           <Text>
-            MAP DEMO !!!
             Latitude: {this.state.region.latitude}{'\n'}
             Longitude: {this.state.region.longitude}{'\n'}
             LatitudeDelta: {this.state.region.latitudeDelta}{'\n'}
             LongitudeDelta: {this.state.region.longitudeDelta}
 
           </Text>
+            <LocationButton
+              moveMaptoLocation={this.moveMaptoLocation}
+              region={this.state.region}
+              markers={this.state.markers}/>
         </View>
      </View>
     );
