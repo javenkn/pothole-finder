@@ -15,6 +15,8 @@ import {
 // import MapView, { Marker } from 'react-native-maps';
 import MapView from 'react-native-maps';
 
+import Geolocation from './Geolocation.js';
+
 export default class potholeMap extends Component {
 
   render() {
@@ -32,9 +34,10 @@ export default class potholeMap extends Component {
           }}
         >
         </MapView>
-        <Text style={styles.caption}>
+        <Text>
           Map Demo!!!
         </Text>
+        <Geolocation />
      </View>
     );
   }
@@ -43,21 +46,10 @@ export default class potholeMap extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'column'
   },
   map: {
-    position: 'absolute',
-    top: 20,
-    left: 0,
-    right: 0,
-    bottom: 100,
-  },
-  caption: {
-    position: 'absolute',
-    alignItems: 'center',
-    right: 150,
-    bottom: 10
+    flex: 1
   }
 });
 
