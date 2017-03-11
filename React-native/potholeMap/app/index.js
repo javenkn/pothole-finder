@@ -8,6 +8,7 @@ import Geolocation from './Geolocation.js';
 
 let {height, width} = Dimensions.get('window');
 
+
 export default class potholeMap extends Component {
   constructor(props) {
     super(props);
