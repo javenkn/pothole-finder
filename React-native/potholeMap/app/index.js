@@ -19,8 +19,8 @@ export default class potholeMap extends Component {
       region: {
         latitude: 21.3069,
         longitude: -157.8583,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0952,
+        latitudeDelta: 0.1922,
+        longitudeDelta: 0.1952,
       },
       markers:[
         {latlng: {
