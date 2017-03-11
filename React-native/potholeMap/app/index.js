@@ -38,6 +38,11 @@ export default class potholeMap extends Component {
           region={this.state.region}
           onRegionChange={this.onRegionChange}
         >
+        <MapView.Marker
+          coordinate={{latitude: 37.786019, longitude: -122.406023}}
+          title="first marker"
+          description="I know it is on the wrong citymap"
+        />
         </MapView>
         <View style={styles.container}>
           <Text>
