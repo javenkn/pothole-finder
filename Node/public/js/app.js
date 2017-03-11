@@ -38,4 +38,3 @@ function myMap(lat, long){
 ws.onclose = function() {
   console.log("Connection is closed ...");
 };
-
