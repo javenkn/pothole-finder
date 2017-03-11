@@ -11,7 +11,7 @@ ws.onerror = function (err) {
 };
 
 ws.onmessage = function (event) {
-  console.log("Yes"); 
+  console.log("Yes");
   navigator.geolocation.getCurrentPosition(showPosition);
 };
 
@@ -40,4 +40,3 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 ws.onclose = function() {
   console.log("Connection is closed ...");
 };
-
