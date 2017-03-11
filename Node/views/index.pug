@@ -52,6 +52,7 @@ html(lang='en')
           .intro-heading Enjoy The Smooth Ride
           a.page-scroll.btn.btn-xl(href='#map') Find Nearby Potholes
     // Map Section
+    input#pac-input.controls(type='text', placeholder='Search Box')
     section#map
     // Team Section
     section#team.bg-light-gray
@@ -142,6 +143,6 @@ html(lang='en')
     // Theme JavaScript
     script(src='/js/theme.js')
     // Google Map
-    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCxXC6vMDHV2x_pIdr6K4b6f8pUTfVzXQ8')
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCxXC6vMDHV2x_pIdr6K4b6f8pUTfVzXQ8&libraries=places')
     script(src='js/google_map.js')
 
