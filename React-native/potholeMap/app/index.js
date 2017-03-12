@@ -140,11 +140,13 @@ componentWillMount(){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
+    justifyContent: 'center'
   },
   map: {
     // flex: 1
     width: width,
-    height: height*2/3
+    height: height*2/3,
+    marginTop: 20
   }
 });
