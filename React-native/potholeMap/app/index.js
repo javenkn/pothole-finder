@@ -120,7 +120,7 @@ componentWillMount(){
         ))}
         </MapView>
         <View style={styles.container}>
-          <Text>
+          <Text style={styles.p}>
             Latitude: {this.state.region.latitude}{'\n'}
             Longitude: {this.state.region.longitude}{'\n'}
             LatitudeDelta: {this.state.region.latitudeDelta}{'\n'}
@@ -141,12 +141,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fed136',
   },
   map: {
     // flex: 1
     width: width,
     height: height*2/3,
     marginTop: 20
+  },
+  p: {
+    color: '#333',
+    textAlign: 'center'
   }
 });
