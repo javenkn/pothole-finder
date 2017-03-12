@@ -4,6 +4,7 @@ const PORT = 3000;
 const path = require('path');
 const public = path.join(__dirname, 'public');
 const expressWs = require('express-ws')(app);
+const mercury = require('./mercury_switch');
 let coordinates = [];
 
 //console.log(coords);
@@ -32,7 +33,7 @@ app.ws('/', function(ws, req) {
     coordinates.push(coords);
 
     console.log(`received: ${coordinates}`);
-    //mercury(ws);
+    mercury(ws);
   });
 
   // Event Listener waiting for the connection to close
@@ -40,7 +41,7 @@ app.ws('/', function(ws, req) {
     console.log('Connection ended...');
   });
 
-  //mercury(ws);
+  mercury(ws);
 });
 
 app.listen(PORT, () => {
