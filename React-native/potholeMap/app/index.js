@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, AppState } from 'react-native';
 
 // import MapView, { Marker } from 'react-native-maps';
 import MapView from 'react-native-maps';
 
 import Geolocation from './Geolocation.js';
-import LocationButton from './LocationButton.js'
+import LocationButton from './LocationButton.js';
+import PushController from './PushController';
+import PushNotification from 'react-native-push-notification';
 
 let {height, width} = Dimensions.get('window');
 
@@ -66,6 +68,27 @@ componentWillMount(){
     this.setState({ region });
   }
 
+  componentDidUpdate() {
+    AppState.addEventListener('change', this.handleAppStateChange);
+  }
+
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this.handleAppStateChange);
+  }
+
+  handleAppStateChange(appState) {
+    if (appState === 'background') {
+      const seconds = 5;
+      let date = new Date(Date.now() + (seconds * 1000));
+      console.log(`date ${date} and ${seconds}`);
+
+      PushNotification.localNotificationSchedule({
+        message: "WARNING! There is a pothole in 100ft.",
+        date,
+      });
+    }
+  }
+
   moveMaptoLocation(newPotHole) {
     newPotHole.latitude = newPotHole.latitude+0.002;
     newPotHole.longitude = newPotHole.longitude+0.002;
@@ -78,6 +101,8 @@ componentWillMount(){
     let pushedMarker = this.state.markers;
     this.setState(pushedMarker);
   }
+
+
 
   render() {
     return (
@@ -127,10 +152,11 @@ componentWillMount(){
             Longitude ∆: {this.state.region.longitudeDelta}
 
           </Text>
-            <LocationButton
-              moveMaptoLocation={this.moveMaptoLocation}
-              region={this.state.region}
-              markers={this.state.markers}/>
+          <LocationButton
+            moveMaptoLocation={this.moveMaptoLocation}
+            region={this.state.region}
+            markers={this.state.markers}/>
+          <PushController></PushController>
         </View>
      </View>
     );
