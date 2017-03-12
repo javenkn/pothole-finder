@@ -24,8 +24,20 @@ export default class potholeMap extends Component {
         longitudeDelta: 0.1952,
       },
       markers:[
-        {latlng: {latitude: 21.3069, longitude: -157.8583},
-          title: "first marker" , description: "FIRST"}
+        {
+          latlng: {
+          latitude: 21.3069,
+          longitude: -157.8583},
+          title: "first marker" ,
+          description: "FIRST"
+        },
+        {
+          latlng: {
+          latitude: 22.3069,
+          longitude: -157.8583},
+          title: "purple marker" ,
+          description: "purple"
+        }
       ]
     };
     this.onRegionChange = this.onRegionChange.bind(this);
@@ -79,11 +91,29 @@ componentWillMount(){
           region={this.state.region}
           onRegionChange={this.onRegionChange}
         >
+        <MapView.Marker
+          coordinate={{
+          latitude: 21.2951,
+          longitude: -157.8435}}
+          image={require('../assets/yellow.png')}
+        />
+        <MapView.Marker
+          coordinate={{
+          latitude: 21.29637186884782,
+          longitude: -157.8498888015747}}
+          image={require('../assets/purple.png')}
+        />
+        <MapView.Marker
+          coordinate={{
+          latitude: 21.302649354160145,
+          longitude: -157.85181999206543}}
+          image={require('../assets/sports.png')}
+        />
         {this.state.markers.map((marker,i) => (
           <MapView.Marker
             key={i}
             coordinate={marker.latlng}
-            image={require('../assets/ph-marker-black.png')}
+            image={require('../assets/pothole.png')}
             title={marker.title}
             description={marker.description}
           />
