@@ -1,4 +1,4 @@
-var wpi = require('wiring-pi');
+// var wpi = require('wiring-pi');
 
 var MPin = 0;
 
