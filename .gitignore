@@ -3,3 +3,4 @@ Node/node_modules
 Node/config/config.json
 *.DS_Store
 npm-debug.log
+Pi/node_modules

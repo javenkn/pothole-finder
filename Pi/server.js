@@ -1,32 +1,17 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const wpi = require('wiring-pi');
+const PORT = 3001;
 const path = require('path');
 const public = path.join(__dirname, 'public');
 const expressWs = require('express-ws')(app);
 const mercury = require('./mercury_switch');
 let coordinates = [];
-
-//console.log(coords);
-app.set('views', path.resolve(__dirname, 'views'));
-app.set('view engine', 'pug');
-app.use(express.static('public')); // for static image and css files
-
-app.get('/', function (req, res) {
-  res.render('index');
-});
-
-app.get('/admin', function (req, res) {
-  res.render('admin');
-});
-
-app.get('/data', function(req, res) {
-  const data = fs.readFileSync('public/data/data.json');
-  res.json(data);
-});
+wpi.wiringPiSetup();
 
 // listen for websocket connections on the root URI
 app.ws('/', function(ws, req) {
+  console.log('creating web socket');
   // Event Listener waiting for a message to come in over the socket connection
   ws.on('message', (coords) => {
     JSON.parse(coords);
