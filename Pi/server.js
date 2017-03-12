@@ -4,6 +4,7 @@ const PORT = 3000;
 const path = require('path');
 const public = path.join(__dirname, 'public');
 const expressWs = require('express-ws')(app);
+const mercury = require('./mercury_switch');
 let coordinates = [];
 
 //console.log(coords);
@@ -19,13 +20,9 @@ app.get('/admin', function (req, res) {
   res.render('admin');
 });
 
-app.get('/datum', function(req, res) {
+app.get('/data', function(req, res) {
   const data = fs.readFileSync('public/data/data.json');
   res.json(data);
-});
-
-app.post('/datum', function(req, res) {
-
 });
 
 // listen for websocket connections on the root URI
@@ -36,7 +33,7 @@ app.ws('/', function(ws, req) {
     coordinates.push(coords);
 
     console.log(`received: ${coordinates}`);
-    //mercury(ws);
+    mercury(ws);
   });
 
   // Event Listener waiting for the connection to close
@@ -44,7 +41,7 @@ app.ws('/', function(ws, req) {
     console.log('Connection ended...');
   });
 
-  //mercury(ws);
+  mercury(ws);
 });
 
 app.listen(PORT, () => {

@@ -1,5 +1,5 @@
 # Things To Ignore
 Node/node_modules
-Node/public/css/
 Node/config/config.json
 *.DS_Store
+npm-debug.log

@@ -1,4 +1,4 @@
-var wpi = require('wiring-pi');
+// var wpi = require('wiring-pi');
 
 var MPin = 0;
 
@@ -6,6 +6,7 @@ var go = true;
 
 function main(ws) {
 	//go = true;
+	console.log(ws);
 	if (wpi.wiringPiSetup() === -1) {
 		console.log("setup wiringPi failed!");
 		return;

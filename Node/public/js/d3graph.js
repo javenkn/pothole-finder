@@ -1,24 +1,52 @@
-// const body = d3.select('body'); // inputs graph where ever you set the select function
+const monthArr = [];
+
+$.getJSON( "/data/data.json" , function( result ){
+  var dataArr = result.features;
+  for (var i = 0; i < dataArr.length; i++) {
+    var unix = dataArr[i].properties.timestamp;
+    var convert = moment.unix(unix).format("MMMM");
+    console.log(convert);
+    monthArr.push(convert);
+  }
+  return monthArr;
+}).then(function(arr){
+  console.log('done');
+});
+
+
+// var monthObj = monthArr.reduce(function(prev, curr, inx, arr){
+//   if (prev[curr]){
+//     prev[curr]++;
+//   }else{
+//     prev[curr] = 1;
+//   }
+//   console.log(arr);
+//   return prev;
+
+// }, {});
+// console.log(monthObj);
+
+// const body = d3.select('#stats'); // inputs graph where ever you set the select function
 const screenWidth = window.outerWidth;
 const screenHeight = window.innerHeight;
 const graphWidth = screenWidth/1.5;
 const graphHeight = screenHeight/1.5;
 
 
-// const data = [ // fake data for Months
-//   {month: 'January', potHoles: 33},
-//   {month: 'February', potHoles: 12},
-//   {month: 'March', potHoles: 41},
-//   {month: 'April', potHoles: 16},
-//   {month: 'May', potHoles: 29},
-//   {month: 'June', potHoles: 59},
-//   {month: 'July', potHoles: 38},
-//   {month: 'August', potHoles: 21},
-//   {month: 'September', potHoles: 25},
-//   {month: 'October', potHoles: 5},
-//   {month: 'November', potHoles: 20},
-//   {month: 'December', potHoles: 13},
-// ];
+const data = [ // fake data for Months
+  {month: 'January', potHoles: 33},
+  {month: 'February', potHoles: 12},
+  {month: 'March', potHoles: 41},
+  {month: 'April', potHoles: 16},
+  {month: 'May', potHoles: 29},
+  {month: 'June', potHoles: 59},
+  {month: 'July', potHoles: 38},
+  {month: 'August', potHoles: 21},
+  {month: 'September', potHoles: 25},
+  {month: 'October', potHoles: 5},
+  {month: 'November', potHoles: 20},
+  {month: 'December', potHoles: 13},
+];
 
 // const data = [ // fake data for Years
 //   {month: 2007, potHoles: 150},
@@ -35,15 +63,15 @@ const graphHeight = screenHeight/1.5;
 //   {month: 2018, potHoles: 450},
 // ];
 
-const data = [ // fake data for Days of week
-  {month: 'Sunday', potHoles: 100, color: 'purple'},
-  {month: 'Monday', potHoles: 80, color: 'red'},
-  {month: 'Tuesday', potHoles: 75, color: 'blue'},
-  {month: 'Wednesday', potHoles: 150, color: 'green'},
-  {month: 'Thursday', potHoles: 200, color: 'orange'},
-  {month: 'Friday', potHoles: 270, color: 'grey'},
-  {month: 'Saturday', potHoles: 270, color: 'black'},
-];
+// const data = [ // fake data for Days of week
+//   {month: 'Sunday', potHoles: 100, color: 'purple'},
+//   {month: 'Monday', potHoles: 80, color: 'red'},
+//   {month: 'Tuesday', potHoles: 75, color: 'blue'},
+//   {month: 'Wednesday', potHoles: 150, color: 'green'},
+//   {month: 'Thursday', potHoles: 200, color: 'orange'},
+//   {month: 'Friday', potHoles: 270, color: 'grey'},
+//   {month: 'Saturday', potHoles: 270, color: 'black'},
+// ];
 
 // const colors = [];
 
