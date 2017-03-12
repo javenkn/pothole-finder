@@ -17,7 +17,6 @@ $.getJSON( "/data/data.json" , function( result ){
     return prev;
 
   }, {});
-  console.log(monthObj);
   var monthKeys = Object.keys(monthObj);
   for (var j = 0; j < monthKeys.length; j++) {
     data.push({"month": monthKeys[j], "potHoles": monthObj[monthKeys[j]]})
