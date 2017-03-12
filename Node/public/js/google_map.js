@@ -24,7 +24,7 @@ function initMap() {
   var mapElement = document.getElementById('map');
 
   // Create the Google Map using out element and options defined above
-  var map = new google.maps.Map(mapElement, mapOptions);
+  window.map = new google.maps.Map(mapElement, mapOptions);
 
   map.data.loadGeoJson('/data/data.json');
   map.data.setStyle(function(feature) {
