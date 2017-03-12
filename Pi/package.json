@@ -1,24 +1,13 @@
 {
-  "name": "Node",
+  "name": "Pi",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js",
+  "main": "server.js",
   "dependencies": {
-    "express": "^4.15.2",
-    "express-ws": "^3.0.0",
-    "pg": "^6.1.4",
-    "pg-hstore": "^2.3.2",
-    "pug": "^2.0.0-beta11",
-    "sequelize": "^3.30.2",
     "wiring-pi": "^2.2.1"
   },
   "devDependencies": {
-    "express": "^4.15.2",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0",
-    "nodemon": "^1.11.0",
-    "pug": "^2.0.0-beta11",
-    "sequelize": "^3.30.2"
+    "nodemon": "^1.11.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

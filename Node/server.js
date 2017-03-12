@@ -19,9 +19,13 @@ app.get('/admin', function (req, res) {
   res.render('admin');
 });
 
-app.get('/data', function(req, res) {
+app.get('/datum', function(req, res) {
   const data = fs.readFileSync('public/data/data.json');
   res.json(data);
+});
+
+app.post('/datum', function(req, res) {
+
 });
 
 // listen for websocket connections on the root URI
