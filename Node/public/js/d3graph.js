@@ -1,3 +1,7 @@
+$.getJSON( "/data/data.json" , function( result ){
+  console.log(result.features);
+});
+
 // const body = d3.select('body'); // inputs graph where ever you set the select function
 const screenWidth = window.outerWidth;
 const screenHeight = window.innerHeight;
