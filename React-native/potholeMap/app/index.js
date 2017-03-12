@@ -60,7 +60,7 @@ componentWillMount(){
       pins.push(markerObj);
   })
     this.setState({
-      markers: pins,
+      markers: pins
     })
   }
 
