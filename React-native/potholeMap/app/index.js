@@ -20,8 +20,8 @@ export default class potholeMap extends Component {
       region: {
         latitude: 21.3069,
         longitude: -157.8583,
-        latitudeDelta: 0.1922,
-        longitudeDelta: 0.1952,
+        latitudeDelta: 0.1992,
+        longitudeDelta: 0.1452,
       },
       markers:[
         {
@@ -123,8 +123,8 @@ componentWillMount(){
           <Text style={styles.p}>
             Latitude: {this.state.region.latitude}{'\n'}
             Longitude: {this.state.region.longitude}{'\n'}
-            LatitudeDelta: {this.state.region.latitudeDelta}{'\n'}
-            LongitudeDelta: {this.state.region.longitudeDelta}
+            Latitude ∆: {this.state.region.latitudeDelta}{'\n'}
+            Longitude ∆: {this.state.region.longitudeDelta}
 
           </Text>
             <LocationButton
