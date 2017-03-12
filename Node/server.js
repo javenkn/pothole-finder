@@ -4,7 +4,7 @@ const PORT = 3000;
 const path = require('path');
 const public = path.join(__dirname, 'public');
 const expressWs = require('express-ws')(app);
-const mercury = require('./public/js/mercury_switch.js'); 
+const mercury = require('./mercury_switch');
 let coordinates = [];
 
 //console.log(coords);
@@ -15,20 +15,23 @@ app.use(express.static('public')); // for static image and css files
 app.get('/', function (req, res) {
   res.render('index');
 });
+
 app.get('/admin', function (req, res) {
   res.render('admin');
 });
 
+app.get('/data', function(req, res) {
+  const data = fs.readFileSync('public/data/data.json');
+  res.json(data);
+});
+
 // listen for websocket connections on the root URI
 app.ws('/', function(ws, req) {
-  //mercury();
   // Event Listener waiting for a message to come in over the socket connection
   ws.on('message', (coords) => {
-    //console.log(coords);
     JSON.parse(coords);
     coordinates.push(coords);
-    
-    console.log(coordinates);
+
     console.log(`received: ${coordinates}`);
     mercury(ws);
   });
