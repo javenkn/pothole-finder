@@ -11,9 +11,9 @@ export default class LocationButton extends Component {
       <View>
         <TouchableOpacity style={styles.button} onPress={()=>
           this.props.moveMaptoLocation(this.props.region)}>
-          <Text>Oops! Hit a pothole!</Text>
+          <Text style={styles.p}>Oops! Hit a pothole!</Text>
         </TouchableOpacity>
-        <Text>
+        <Text style={styles.coordinates}>
           {this.props.region.latitude}
           {this.props.region.longitude}
         </Text>
@@ -26,8 +26,15 @@ const styles = StyleSheet.create({
   button:{
     borderRadius: 10,
     padding: 10,
-    backgroundColor: 'lightgray',
+    backgroundColor: '#e74c3c',
     borderColor: 'black',
-    margin: 10
+    margin: 10,
+  },
+  p: {
+    color: '#fff',
+    textAlign: 'center'
+  },
+  coordinates: {
+    color: '#333'
   }
 });

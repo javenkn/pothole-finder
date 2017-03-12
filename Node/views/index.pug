@@ -39,6 +39,8 @@ html(lang='en')
             li
               a.page-scroll(href='#map') Map
             li
+              a.page-scroll(href='#stats') Stats
+            li
               a.page-scroll(href='#team') Team
             li
               a.page-scroll(href='#download') Download App
@@ -55,7 +57,12 @@ html(lang='en')
     input#pac-input.controls(type='text', placeholder='Search Box')
     section#map
     // Stats Section
-    //- section#stats
+    section#stats
+      .container
+        .row
+          .col-lg-12.text-center
+            h2.section-heading 2016 Potholes Statistics
+            #d3-container
     // Team Section
     section#team.bg-light-gray
       .container
