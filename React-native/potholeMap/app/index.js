@@ -40,7 +40,7 @@ export default class potholeMap extends Component {
           title: "purple marker" ,
           description: "purple"
         }
-      ]
+      ],
     };
     this.onRegionChange = this.onRegionChange.bind(this);
     this.moveMaptoLocation = this.moveMaptoLocation.bind(this);
@@ -60,7 +60,7 @@ componentWillMount(){
       pins.push(markerObj);
   })
     this.setState({
-      markers: pins
+      markers: pins,
     })
   }
 
@@ -143,6 +143,12 @@ componentWillMount(){
             description={marker.description}
           />
         ))}
+        <MapView.Marker
+          coordinate={{
+          latitude: 21.28598544058520,
+          longitude: -157.8066086769200}}
+          image={require('../assets/yellow.png')}
+        />
         </MapView>
         <View style={styles.container}>
           <Text style={styles.p}>
