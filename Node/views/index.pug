@@ -51,13 +51,11 @@ html(lang='en')
           .intro-lead-in Sit Back. Relax.
           .intro-heading Enjoy The Smooth Ride
           a.page-scroll.btn.btn-xl(href='#map') Find Nearby Potholes
-    // Services Section
+    // Map Section
+    input#pac-input.controls(type='text', placeholder='Search Box')
     section#map
-      .container
-        .row
-          .col-lg-12.text-center
-            h2.section-heading Pothole Map
-            h3.section-subheading.text-muted Hello.
+    // Stats Section
+    //- section#stats
     // Team Section
     section#team.bg-light-gray
       .container
@@ -78,40 +76,46 @@ html(lang='en')
           .col-sm-4
             .team-member
               img.img-responsive.img-circle(src='/img/team/male.jpg', alt='')
-              h4 Jr DevLeague
+              h4 Javen Nakamoto
               p.text-muted Web Developer
-          .row
-            .col-sm-4
-              .team-member
-                img.img-responsive.img-circle(src='/img/team/female.jpg', alt='')
-                h4 Jr DevLeague
-                p.text-muted Web Developer
-            .col-sm-4
-              .team-member
-                img.img-responsive.img-circle(src='/img/team/male.jpg', alt='')
-                h4 Javen Nakamoto
-                p.text-muted Web Developer
-            .col-sm-4
-              .team-member
-                img.img-responsive.img-circle(src='/img/team/female.jpg', alt='')
-                h4 Lisa Zhou
-                p.text-muted Web Developer
-            .row
-              .col-sm-4
-                .team-member
-                  img.img-responsive.img-circle(src='/img/team/female.jpg', alt='')
-                  h4 Marta Katona
-                  p.text-muted Web Developer
-              .col-sm-4
-                .team-member
-                  img.img-responsive.img-circle(src='/img/team/female.jpg', alt='')
-                  h4 Nikki Kobayashi
-                  p.text-muted Web Developer
-              .col-sm-4
-                .team-member
-                  img.img-responsive.img-circle(src='/img/team/male.jpg', alt='')
-                  h4 Sheena Galutira
-                  p.text-muted Web Developer
+        .row
+          .col-sm-4
+            .team-member
+              img.img-responsive.img-circle(src='/img/team/male.jpg', alt='')
+              h4 Ian
+              p.text-muted Jr DevLeague
+          .col-sm-4
+            .team-member
+              img.img-responsive.img-circle(src='/img/team/female.jpg', alt='')
+              h4 Lisa Zhou
+              p.text-muted Web Developer
+          .col-sm-4
+            .team-member
+              img.img-responsive.img-circle(src='/img/team/female.jpg', alt='')
+              h4 Lura
+              p.text-muted Web Developer
+        .row
+          .col-sm-4
+            .team-member
+              img.img-responsive.img-circle(src='/img/team/male.jpg', alt='')
+              h4 Luke
+              p.text-muted Jr DevLeague
+          .col-sm-4
+            .team-member
+              img.img-responsive.img-circle(src='/img/team/female.jpg', alt='')
+              h4 Marta Katona
+              p.text-muted Web Developer
+          .col-sm-4
+            .team-member
+              img.img-responsive.img-circle(src='/img/team/female.jpg', alt='')
+              h4 Nikki Kobayashi
+              p.text-muted Web Developer
+        .row
+          .col-sm-12
+            .team-member
+              img.img-responsive.img-circle(src='/img/team/female.jpg', alt='')
+              h4 Sheena Galutira
+              p.text-muted Web Developer
     section#download.download.bg-yellow.text-center
       .container
         .row
@@ -140,3 +144,11 @@ html(lang='en')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', integrity='sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb', crossorigin='anonymous')
     // Theme JavaScript
     script(src='/js/theme.js')
+    // Google Map
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCxXC6vMDHV2x_pIdr6K4b6f8pUTfVzXQ8&libraries=places')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.2/d3.js')
+    script(src='js/google_map.js')
+    script(src='js/app.js')
+    script(src='js/d3graph.js')
+
